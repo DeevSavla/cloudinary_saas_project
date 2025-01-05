@@ -20,7 +20,7 @@ export default clerkMiddleware((auth,req)=>{
 
     if(userId && isPublicRoute(req) && !isAccessingDashboard){
         return NextResponse.redirect(new URL("/home",req.url))
-    }
+    }   
 
     if(!userId){
         if(!isPublicApiRoute(req) && !isPublicRoute(req)){
